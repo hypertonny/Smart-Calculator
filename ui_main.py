@@ -11,14 +11,43 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(360, 500)
+        MainWindow.resize(360, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout.setObjectName("verticalLayout")
+
+        # Add hamburger menu button
+        self.btn_menu = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_menu.setObjectName("btn_menu")
+        self.btn_menu.setText("☰")
+        self.btn_menu.setStyleSheet("text-align: left; padding: 5px;")
+        self.verticalLayout.addWidget(self.btn_menu)
+
+        # Display
         self.display = QtWidgets.QLineEdit(self.centralwidget)
         self.display.setObjectName("display")
         self.verticalLayout.addWidget(self.display)
+
+        # Advanced operations
+        self.advancedLayout = QtWidgets.QHBoxLayout()
+        self.btn_sqrt = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_sqrt.setObjectName("btn_sqrt")
+        self.btn_sqrt.setText("√")
+        self.advancedLayout.addWidget(self.btn_sqrt)
+        
+        self.btn_pow = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_pow.setObjectName("btn_pow")
+        self.btn_pow.setText("x²")
+        self.advancedLayout.addWidget(self.btn_pow)
+        
+        self.btn_log = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_log.setObjectName("btn_log")
+        self.btn_log.setText("log")
+        self.advancedLayout.addWidget(self.btn_log)
+        
+        self.verticalLayout.addLayout(self.advancedLayout)
+
         self.gridLayout = QtWidgets.QGridLayout()
         self.gridLayout.setObjectName("gridLayout")
         self.btn_7 = QtWidgets.QPushButton(self.centralwidget)
@@ -110,3 +139,7 @@ class Ui_MainWindow(object):
         self.btn_equals.setText(_translate("MainWindow", "="))
         self.btn_clear.setText(_translate("MainWindow", "C"))
         self.btn_add_transaction.setText(_translate("MainWindow", "Add Transaction"))
+        self.btn_menu.setText(_translate("MainWindow", "☰"))
+        self.btn_sqrt.setText(_translate("MainWindow", "√"))
+        self.btn_pow.setText(_translate("MainWindow", "x²"))
+        self.btn_log.setText(_translate("MainWindow", "log"))
